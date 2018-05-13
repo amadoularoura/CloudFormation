@@ -1,5 +1,5 @@
 ---
 Resources:
-  MyS3Bucket:
+  MyCFS3Bcuket:
     Type: "AWS::S3::Bucket"
     Properties: {}
