@@ -5,15 +5,19 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-          - DomainName: d1g1t-ui-staging.s3-website.ca-central-1.amazonaws.com
-            Id: S3-d1g1t-ui-staging
-            CustomOriginConfig:
-              HTTPPort: 80
-              HTTPSPort: 443
-              OriginKeepaliveTimeout: 5
-              OriginProtocolPolicy: http-only
-              OriginReadTimeout: 30
+        - DomainName: d1g1t-ui-staging.s3-website.ca-central-1.amazonaws.com
+          Id: S3-d1g1t-ui-staging
+          CustomOriginConfig:
+            HTTPPort: 80
+            HTTPSPort: 443
+            OriginKeepaliveTimeout: 5
+            OriginProtocolPolicy: http-only
+            OriginReadTimeout: 30
+            OriginSSLProtocols: TLSv1.1
+
         Enabled: 'true'
+        Aliases:
+         - gluskinsheff.staging.d1g1t.com
         HttpVersion: http2
         Comment: Cloudfront for Staging environment
         DefaultCacheBehavior:
