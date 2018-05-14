@@ -1,0 +1,12 @@
+---
+StagingDB:
+  Type: "AWS::RDS::DBInstance"
+  Properties:
+    AllocatedStorage: "100"
+    DBInstanceClass: "db.m4.large"
+    Engine: "PostgreSQL"
+    EngineVersion: "9.6.6"
+    DBName: d1g1t
+    MasterUsername: d1g1t
+    AvailabilityZone: ca-central-1b
+    VPCSecurityGroups: vpc-c5ff2bac
