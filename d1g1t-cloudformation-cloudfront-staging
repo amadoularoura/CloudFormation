@@ -7,7 +7,7 @@ Resources:
         Origins:
         - DomainName: staging.d1g1t.com
           Id: S3-d1g1t-ui-staging
-          S3OriginConfig:
+          S3OriginConfig: {}
         Enabled: 'true'
         Comment: Some comment
         DefaultCacheBehavior:
