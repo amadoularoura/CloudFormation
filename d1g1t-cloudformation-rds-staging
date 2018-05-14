@@ -10,4 +10,5 @@ Resources:
       DBName: d1g1t
       MasterUsername: d1g1t
       AvailabilityZone: ca-central-1b
-      VPCSecurityGroups: vpc-c5ff2bac
+      VPCSecurityGroups:
+        - vpc-c5ff2bac
