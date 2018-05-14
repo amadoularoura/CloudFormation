@@ -20,4 +20,5 @@ Resources:
         PriceClass: PriceClass_100
         ViewerCertificate:
           ACMCertificateArn: arn:aws:acm:ca-central-1:953603514052:certificate/88d8761b-abbd-4407-b621-8179f0a049d2
+          SslSupportMethod: 'sni-only'
           #IAMCertificateId: a7ddebfe-5a23-4bb1-b28f-cc45cf4f169f
