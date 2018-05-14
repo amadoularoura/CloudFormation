@@ -1,0 +1,22 @@
+---
+Resources:
+  myDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+        - DomainName: staging.d1g1t.com
+          Id: S3-d1g1t-ui-staging
+          S3OriginConfig:
+        Enabled: 'true'
+        Comment: Some comment
+        DefaultCacheBehavior:
+          TargetOriginId: S3-d1g1t-ui-staging
+          ForwardedValues:
+            QueryString: 'false'
+            Cookies:
+              Forward: none
+          ViewerProtocolPolicy: redirect-to-https
+        PriceClass: PriceClass_100
+        ViewerCertificate:
+          IAMCertificateId: a7ddebfe-5a23-4bb1-b28f-cc45cf4f169f

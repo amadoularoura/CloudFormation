@@ -8,8 +8,17 @@ Resources:
       Engine: "PostgreSQL"
       EngineVersion: "9.6.6"
       #DBName: d1g1t
-      #MasterUsername: d1g1t
-      #MasterUserPassword: d1g1t
+      MasterUsername: d1g1t
+      MasterUserPassword: *****
       AvailabilityZone: ca-central-1b
+      SubnetGroup: !Ref StagingSubnetGroup
       #VPCSecurityGroups:
       # - vpc-c5ff2bac
+
+  StagingSubnetGroup:
+    Type: "AWS::RDS::DBSubnetGroup"
+    Properties:
+      DBSubnetGroupDescription: "Staging Subnet Group"
+      SubnetIds:
+        - "subnet-edb84896"
+        - "subnet-f364b79a"
