@@ -13,11 +13,11 @@ Resources:
             OriginKeepaliveTimeout: 5
             OriginProtocolPolicy: http-only
             OriginReadTimeout: 30
-            OriginSSLProtocols: TLSv1.1
-
+            OriginSSLProtocols:
+            - TLSv1.1
         Enabled: 'true'
         Aliases:
-         - gluskinsheff.staging.d1g1t.com
+        - gluskinsheff.staging.d1g1t.com
         HttpVersion: http2
         Comment: Cloudfront for Staging environment
         DefaultCacheBehavior:
@@ -29,6 +29,6 @@ Resources:
           ViewerProtocolPolicy: redirect-to-https
         PriceClass: PriceClass_100
         ViewerCertificate:
-        #  ACMCertificateArn: "aws:acm:ca-central-1:953603514052:certificate/88d8761b-abbd-4407-b621-8179f0a049d2"
-        #  SslSupportMethod: 'sni-only'
-          CloudFrontDefaultCertificate: 'true'
+          ACMCertificateArn: "aws:acm:ca-central-1:953603514052:certificate/88d8761b-abbd-4407-b621-8179f0a049d2"
+          SslSupportMethod: 'sni-only'
+          #CloudFrontDefaultCertificate: 'true'
