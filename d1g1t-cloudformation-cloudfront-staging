@@ -5,11 +5,17 @@ Resources:
     Properties:
       DistributionConfig:
         Origins:
-        - DomainName: staging.d1g1t.com
-          Id: S3-d1g1t-ui-staging
-          S3OriginConfig: {}
+          - DomainName: d1g1t-ui-staging.s3-website.ca-central-1.amazonaws.com
+            Id: S3-d1g1t-ui-staging
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginKeepaliveTimeout: 5
+              OriginProtocolPolicy: http-only
+              OriginReadTimeout: 30
         Enabled: 'true'
-        Comment: Some comment
+        HttpVersion: http2
+        Comment: Cloudfront for Staging environment
         DefaultCacheBehavior:
           TargetOriginId: S3-d1g1t-ui-staging
           ForwardedValues:
@@ -20,5 +26,5 @@ Resources:
         PriceClass: PriceClass_100
         ViewerCertificate:
         #  ACMCertificateArn: "aws:acm:ca-central-1:953603514052:certificate/88d8761b-abbd-4407-b621-8179f0a049d2"
-          #SslSupportMethod: 'sni-only'
+        #  SslSupportMethod: 'sni-only'
           CloudFrontDefaultCertificate: 'true'
